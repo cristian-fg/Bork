@@ -1,0 +1,11 @@
+> Task :app:compileJava UP-TO-DATE
+> Task :app:processResources NO-SOURCE
+> Task :app:classes UP-TO-DATE
+
+> Task :app:run
+Choose your class...
+Warrior | Mage | Rogue
+ATTACK RRRAAAAWWRARRARR
+
+BUILD SUCCESSFUL in 15s
+2 actionable tasks: 1 executed, 1 up-to-date
