@@ -1,13 +1,18 @@
 package org.game;
 
 public class Rogue extends Entity {
-    public void takeDamage(int damage) {
+     @Override
+    public  void takeDamage(int damage){
 
     }
-    public void kill() {
-
+    @Override
+    public  void kill( ){
+        System.out.println("This is as far as you go...")
+        System.exit(0);
     }
-    public String genWarcry() {
+    @Override
+    public  String genWarcry(){
+        return "...";
 
     }
 }
