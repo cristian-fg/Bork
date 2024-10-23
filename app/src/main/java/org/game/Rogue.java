@@ -1,16 +1,13 @@
 package org.game;
 
 public class Rogue extends Entity {
-    @Override
-    public void attack() {
+    public void takeDamage(int damage) {
 
     }
-    @Override
-    public void takeDamage() {
+    public void kill() {
 
     }
-    @Override
-    public void heal() {
+    public String genWarcry() {
 
     }
 }

@@ -6,7 +6,6 @@ public abstract class Entity {
     public String name;
     public int maxHp;
     public int hp;
-    public int armour;
     public int attackPower;
     public Weapon weapon;
 

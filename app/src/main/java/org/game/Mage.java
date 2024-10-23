@@ -3,7 +3,6 @@ package org.game;
 import java.util.Random;
 
 public class Mage extends Entity {
-
     @Override
     public void takeDamage(int damage) {
 

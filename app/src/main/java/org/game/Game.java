@@ -1,24 +1,29 @@
 package org.game;
 
+import java.util.Random;
 import java.util.Scanner;
+import org.game.Warrior;
+import org.game.Weapon.WeaponClass;
 
 public class Game {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        Random rand = new Random();
         slowPrint("Choose your vessel...", 40);
         slowPrint("You can become a mighty warrior... a lone rogue... or a fearsome mage...", 40);
         slowPrint("What is your choice? Speak.", 40);
 
         Entity player = null;
 
+        String choice = input.nextLine();
         boolean validClassChoice = false;
         while (!validClassChoice) {
             System.out.print("> ");
-            String choice = input.nextLine();
 
             switch (choice.toLowerCase()) {
                 case "warrior":
                     player = new Warrior();
+                    player.weapon = new Weapon(WeaponClass.TWO_HANDED_AXE);
                     validClassChoice = true;
                     break;
                 case "mage":
@@ -40,9 +45,12 @@ public class Game {
         slowPrint("What is the name of this vessel?", 40);
         String name = input.nextLine();
         slowPrint("Hmm... What a delightful name.", 40);
+        player.name = name;
+
         slowPrint("Now...", 40);
         slowPrint("You feel as if your vision is becoming blurry...", 40);
         slowPrint("And you faint.", 40);
+
         try {
             Thread.sleep(1500);
             clearConsole();
@@ -55,8 +63,8 @@ public class Game {
             System.out.println("TOO BAD! DIE");
         }
 
-        slowPrint("You awaken in a forest.");
-        //player.attack();
+        slowPrint("You awaken in a dark dungeon", 30);
+        slowPrint("You need to get out of there.", 30);
 
         input.close();
     }
