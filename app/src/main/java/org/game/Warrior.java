@@ -37,7 +37,7 @@ public class Warrior extends Entity {
 
     @Override
     public void takeDamage(int damage) {
-        hp -= Math.max(0, (damage - PASSIVE_ARMOUR));
+        hp -= Math.max(0, (damage - armour - PASSIVE_ARMOUR));
         if (hp < 1) {
             kill();
         }
@@ -45,7 +45,7 @@ public class Warrior extends Entity {
 
     @Override
     public void kill() {
-        System.out.println("you fucking died");
+        System.out.println("Brute Force wasn't enough this time...");
         System.exit(0);
     }
 
