@@ -26,11 +26,11 @@ public class SantaClaus extends Entity {
 
     @Override
     public void attack(Entity target) {
-        Game.slowPrint(name + " Searchs for something in his bag...", 30);
+        Game.slowPrint(name + " searches for something in his bag...", 30);
         Random rand = new Random();
 
         if (rand.nextDouble(1.0) <= weapon.missChance) {
-            Game.slowPrint(" But it was coal.", 30);
+            Game.slowPrint("But it was coal.", 30);
             return;
         }
 
@@ -61,15 +61,15 @@ public class SantaClaus extends Entity {
     public String genWarcry() {
         Random rand = new Random();
         int funnyphrase = rand.nextInt(3);
-        switch (funnyphrase){
+        switch (funnyphrase) {
             case 0:
-                return "Ho Ho Ho, there it goes!" + weapon.attackMessage + "'";
+                return "Ho Ho Ho, there it goes! '" + weapon.attackMessage + "'";
             case 1:
-                return "Where's Rudolph when I need him?!" + weapon.attackMessage + "'";
+                return "Where's Rudolph when I need him?! '" + weapon.attackMessage + "'";
             case 2:
-                return "Where the cookies?" + weapon.attackMessage + "'";
+                return "Where the cookies? '" + weapon.attackMessage + "'";
             case 3:
-                return "You're heading the mischievous list!" + weapon.attackMessage + "'";
+                return "You're heading the mischievous list! '" + weapon.attackMessage + "'";
         }
 
         return "You're heading the mischievous list!";

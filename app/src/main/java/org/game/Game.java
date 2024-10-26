@@ -62,12 +62,12 @@ public class Game {
                 Thread.sleep(1500);
                 clearConsole();
             } catch (InterruptedException e) {
-                System.out.println("TOO BAD! DIE");
+                System.out.println("Main thread crashed, UNLUCKY");
             }
             try {
                 Thread.sleep(4000);
             } catch (InterruptedException e) {
-                System.out.println("TOO BAD! DIE");
+                System.out.println("Main thread crashed, UNLUCKY");
             }
 
             slowPrint("You awaken in a dark dungeon.", 30);
