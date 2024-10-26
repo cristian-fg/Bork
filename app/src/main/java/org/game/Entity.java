@@ -16,12 +16,13 @@ public abstract class Entity {
     public void heal(int hp) {
         if (this.hp + hp > maxHp) {
             this.hp = maxHp;
+            Game.slowPrint("You take a health potion and heal for " + hp + " hp.", 30);
 
             return;
         }
 
-        this.hp += hp;
         Game.slowPrint("You take a health potion and heal for " + hp + " hp.", 30);
+        this.hp += hp;
     }
 
     // only for player
@@ -31,6 +32,8 @@ public abstract class Entity {
     }
 
     public void getInfo() {
-        Game.slowPrint("INFO : HP " + maxHp + "/" + hp + " | WEAPON: " + weapon.type.name(), 30);
+        System.out.println(name.toUpperCase() + " INFO : HP " + maxHp + "/" + hp + " | WEAPON : " + weapon.type.name());
+        System.out.println("WEAPON : MIN DAMAGE = " + weapon.minDamage
+            + " / MAX DAMAGE = " + weapon.maxDamage);
     }
 }

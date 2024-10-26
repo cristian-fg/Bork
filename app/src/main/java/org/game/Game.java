@@ -1,6 +1,5 @@
 package org.game;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -45,11 +44,15 @@ public class Game {
                     break;
                 }
             }
-            /*
+
             slowPrint("What is the name of this vessel?", 40);
             String name = input.nextLine();
-            slowPrint("Hmm... What a delightful name.", 40);
+            slowPrint("Hmm... What a delightful name. But irrelevant.", 40);
             player.name = name;
+
+            if (player.name.equals("god")) {
+                player.weapon = new Weapon(WeaponClass.GUN);
+            }
 
             slowPrint("Now...", 40);
             slowPrint("You feel as if your vision is becoming blurry...", 40);
@@ -67,20 +70,71 @@ public class Game {
                 System.out.println("TOO BAD! DIE");
             }
 
-            slowPrint("You awaken in a dark dungeon", 30);
-            slowPrint("You need to get out of there.", 30);
-            */
+            slowPrint("You awaken in a dark dungeon.", 30);
+            slowPrint("Next to you, you find a " + player.weapon.type.name() + ".", 30);
+            waitInRoom(player);
 
-            Goblin gobling = new Goblin();
-            gobling.name = "Jeff";
-            Battle battle = new Battle(player, gobling);
+            Goblin goblin = new Goblin("JEFF THE GOBLIN");
+            Battle battle = new Battle(player, goblin);
             battle.battle();
 
             if (battle.playerLost) {
                 continue;
             }
 
-            slowPrint("congratulations you won or something idk");
+            waitInRoom(player);
+
+            Witch witch = new Witch("Witch from Clash Royale");
+            Battle battle2 = new Battle(player, witch);
+            battle2.battle();
+
+            if (battle2.playerLost) {
+                continue;
+            }
+
+            waitInRoom(player);
+
+            Skeleton skeleton = new Skeleton("sans undertale");
+            Battle battle3 = new Battle(player, skeleton);
+            battle3.battle();
+
+            if (battle3.playerLost) {
+                continue;
+            }
+
+            waitInRoom(player);
+
+            DarkMage mage = new DarkMage("Dark Magician");
+            Battle battle4 = new Battle(player, mage);
+            battle4.battle();
+
+            if (battle4.playerLost) {
+                continue;
+            }
+
+            waitInRoom(player);
+
+            SantaClaus santa = new SantaClaus();
+            Battle battle5 = new Battle(player, santa);
+            battle5.battle();
+
+            if (battle5.playerLost) {
+                continue;
+            }
+
+            waitInRoom(player);
+
+            slowPrint("THIS IS THE FINAL BATTLE. HOW THE HELL ARE YOU HERE.");
+            TheVoid boss = new TheVoid();
+            Battle finalBattle = new Battle(player, boss);
+            finalBattle.battle();
+
+            if (finalBattle.playerLost) {
+                System.out.println("UNLUCKY :)))))))");
+                continue;
+            }
+
+            slowPrint("congratulations you won or something idk. how");
             System.out.println();
             System.out.println("Input anything to go back to title screen.");
             System.out.print("> ");
@@ -132,10 +186,14 @@ public class Game {
         System.out.println("--------------------------");
         System.out.println();
         System.out.println("By:\nCristian Fumagal Galvan\nJuan Pablo Marcos Chapa\nMauricio Bejar\n");
-        System.out.println("Input anything to start the game.");
+        System.out.println("Input anything to start the game, or type 'exit' to close the game.");
         System.out.print("> ");
 
         String wait = scanner.nextLine();
+        if (wait.equals("exit")) {
+            System.out.println("Thanks for playing :thumbs_up:");
+            System.exit(0);
+        }
         clearConsole();
     }
 
@@ -166,6 +224,27 @@ public class Game {
         System.out.println("Input anything to proceed.");
         System.out.print("> ");
         scanner.nextLine();
+    }
+
+    public static void waitInRoom(Entity player) {
+        Scanner scanner = new Scanner(System.in);
+        Game.slowPrint("There is a metal door in front of you.", 30);
+        Game.slowPrint("Before you proceed... Rest for a little bit and heal.", 30);
+        player.healToMax();
+        boolean proceed = false;
+        while (!proceed) {
+            Game.slowPrint("While you rest, you can check your status by writing: 'status'.", 30);
+            Game.slowPrint("If you wish to continue, write 'continue'.", 30);
+            System.out.print("> ");
+            String choice = scanner.nextLine();
+            if (choice.equals("status")) {
+                player.getInfo();
+            } else if (choice.equals("continue")) {
+                Game.slowPrint("You open the door and proceed to the next room.", 30);
+                Game.slowPrint("You feel like each time you enter through a door, you get closer to the exit.", 30);
+                return;
+            }
+        }
     }
 }
 

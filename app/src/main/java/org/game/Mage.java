@@ -6,8 +6,9 @@ import org.game.Weapon.WeaponClass;
 
 public class Mage extends Entity {
     public Mage() {
-        maxHp = 100;
+        maxHp = 110;
         hp = maxHp;
+
         Random rand = new Random();
         switch (rand.nextInt(3)) {
             case 0:

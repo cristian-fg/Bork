@@ -4,10 +4,11 @@ import java.util.Random;
 
 import org.game.Weapon.WeaponClass;
 
-public class The_Void extends Entity {
-    public The_Void() {
+public class TheVoid extends Entity {
+    public TheVoid() {
         maxHp = 1000;
         hp = 1000;
+        name = "∴╎ꖎꖎ ᓭℸ ̣ ∷⚍ᓵꖌ ||𝙹⚍ ∴╎ℸ ̣ ⍑ ";
 
         Random rand = new Random();
         switch (rand.nextInt(7)) {
@@ -19,24 +20,22 @@ public class The_Void extends Entity {
                 break;
             case 2:
                 weapon = new Weapon(WeaponClass.ONE_HANDED_SWORD);
-            break;
+                break;
             case 3:
                 weapon = new Weapon(WeaponClass.ONE_HANDED_AXE);
-            break;
+                break;
             case 4:
                 weapon = new Weapon(WeaponClass.DAGGER);
                 break;
             case 5:
                 weapon = new Weapon(WeaponClass.BOW);
-            break;
+                break;
             case 6:
                 weapon = new Weapon(WeaponClass.STAFF);
-            break;
-           case 7:
-            weapon = new Weapon(WeaponClass.WAND);
-           break;
-
-    
+                break;
+            case 7:
+                weapon = new Weapon(WeaponClass.WAND);
+                break;
         }
     }
 
@@ -70,15 +69,15 @@ public class The_Void extends Entity {
 
     @Override
     public void kill() {
-    Game.slowPrint("__   __              _    _ _         _   ", 30);
-    Game.slowPrint("\\ \\ / /           | |  | (_)     | | ", 30);
-    Game.slowPrint("\\ V /___  _   _  | |  | |_ _ __ | | ", 30);
-    Game.slowPrint(" _____                  _____                      _   _     _  ", 30);
-    Game.slowPrint(" _____                  _____                      _   _     _  ", 30);
-    Game.slowPrint(" _____                  _____                      _   _     _  ", 30);
-    Game.slowPrint(" _____                  _____                      _   _     _  ", 30);
-    Game.slowPrint(" _____                  _____                      _   _     _  ", 30);
-    Game.slowPrint("Darkness is sealed, the kingdom is safe! ", 30);
+        System.out.println("__   __              _    _ _         _   ");
+        System.out.println("\\ \\ / /           | |  | (_)     | | ");
+        System.out.println("\\ V /___  _   _  | |  | |_ _ __ | | ");
+        System.out.println(" _____                  _____                      _   _     _  ");
+        System.out.println(" _____                  _____                      _   _     _  ");
+        System.out.println(" _____                  _____                      _   _     _  ");
+        System.out.println(" _____                  _____                      _   _     _  ");
+        System.out.println(" _____                  _____                      _   _     _  ");
+        Game.slowPrint("Darkness is sealed, the kingdom is safe! ", 30);
     }
 
     @Override
@@ -86,20 +85,16 @@ public class The_Void extends Entity {
         Random rand = new Random();
         int funnyphrase = rand.nextInt(3);
         switch (funnyphrase){
-          case 0:
-           return "C𝙹ᒲ!¡sᓵ╎ ╎ᓭ ℸ ̣ ⍑ᒷ ʖᒷᓭℸ ̣  ᓵꖎᔑᓭᓭ" + weapon.attackMessage + "'";
-          
-           case 1: 
-           return "ᒷリ↸ ╎ᓭ リᒷᔑ∷" + weapon.attackMessage + "'";
-
-           case 2:
-           return "ᒲᔑ↸ᒷ ʖ|| ᓵ∷╎ᓭℸ ̣ ╎ᔑリ ⋮⚍ᔑリ!¡╎ ᔑリ↸ ᒲᔑ⚍" + weapon.attackMessage + "'";
-
-           case 3:
-           return " リᒷ⍊ᒷ∷ ⊣╎⍊ᒷ ⚍!¡, ℸ ̣ ∷⚍ᓭℸ ̣  ||𝙹⚍∷ ╎リᓭℸ ̣ ╎リᓵℸ ̣ ᓭ" + weapon.attackMessage + "'";
-
-
-
+            case 0:
+                return "C𝙹ᒲ!¡sᓵ╎ ╎ᓭ ℸ ̣ ⍑ᒷ ʖᒷᓭℸ ̣  ᓵꖎᔑᓭᓭ" + weapon.attackMessage + "'";
+            case 1:
+                return "ᒷリ↸ ╎ᓭ リᒷᔑ∷" + weapon.attackMessage + "'";
+            case 2:
+                return "ᒲᔑ↸ᒷ ʖ|| ᓵ∷╎ᓭℸ ̣ ╎ᔑリ ⋮⚍ᔑリ!¡╎ ᔑリ↸ ᒲᔑ⚍" + weapon.attackMessage + "'";
+            case 3:
+                return "リᒷ⍊ᒷ∷ ⊣╎⍊ᒷ ⚍!¡, ℸ ̣ ∷⚍ᓭℸ ̣  ||𝙹⚍∷ ╎リᓭℸ ̣ ╎リᓵℸ ̣ ᓭ" + weapon.attackMessage + "'";
         }
+
+        return "リᒷ⍊ᒷ∷ ⊣╎⍊ᒷ ⚍!¡, ℸ ̣ ∷⚍ᓭℸ ̣  ||𝙹⚍∷ ╎リᓭℸ ̣ ╎リᓵℸ ̣ ᓭ";
     }
 }

@@ -8,7 +8,7 @@ public class Warrior extends Entity {
     private final int PASSIVE_ARMOUR = 10;
 
     public Warrior() {
-        maxHp = 110;
+        maxHp = 130;
         hp = maxHp;
 
         Random rand = new Random();

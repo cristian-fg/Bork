@@ -5,9 +5,10 @@ import java.util.Random;
 import org.game.Weapon.WeaponClass;
 
 public class Skeleton extends Entity {
-    public Skeleton() {
+    public Skeleton(String name) {
         maxHp = 100;
-        hp = 100;
+        hp = maxHp;
+        this.name = name;
 
         Random rand = new Random();
         switch (rand.nextInt(2)) {

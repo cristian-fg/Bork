@@ -4,10 +4,11 @@ import java.util.Random;
 
 import org.game.Weapon.WeaponClass;
 
-public class Santa_Claus extends Entity {
-    public Santa_Claus() {
+public class SantaClaus extends Entity {
+    public SantaClaus() {
         maxHp = 500;
         hp = 500;
+        name = "Santa Claus";
 
         Random rand = new Random();
         switch (rand.nextInt(2)) {
@@ -18,9 +19,8 @@ public class Santa_Claus extends Entity {
                 weapon = new Weapon(WeaponClass.LEGENDARY_ULTRA_POWERFUL_MIGHTY_SWORD);
                 break;
             case 2:
-            weapon = new Weapon(WeaponClass.JOLLY_TEETHBREAKER);
-            break;
-           
+                weapon = new Weapon(WeaponClass.JOLLY_TEETHBREAKER);
+                break;
         }
     }
 
@@ -62,20 +62,16 @@ public class Santa_Claus extends Entity {
         Random rand = new Random();
         int funnyphrase = rand.nextInt(3);
         switch (funnyphrase){
-          case 0:
-           return "Ho Ho Ho, there it goes!" + weapon.attackMessage + "'";
-          
-           case 1: 
-           return "Where's Rudolph when I need him?!" + weapon.attackMessage + "'";
-
-           case 2:
-           return "Where the cookies?" + weapon.attackMessage + "'";
-
-           case 3:
-           return " You're heading the mischievous list!" + weapon.attackMessage + "'";
-
-
-
+            case 0:
+                return "Ho Ho Ho, there it goes!" + weapon.attackMessage + "'";
+            case 1:
+                return "Where's Rudolph when I need him?!" + weapon.attackMessage + "'";
+            case 2:
+                return "Where the cookies?" + weapon.attackMessage + "'";
+            case 3:
+                return "You're heading the mischievous list!" + weapon.attackMessage + "'";
         }
+
+        return "You're heading the mischievous list!";
     }
 }

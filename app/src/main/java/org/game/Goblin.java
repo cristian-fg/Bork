@@ -5,9 +5,10 @@ import java.util.Random;
 import org.game.Weapon.WeaponClass;
 
 public class Goblin extends Entity {
-    public Goblin() {
+    public Goblin(String name) {
         maxHp = 80;
-        hp = 80;
+        hp = maxHp;
+        this.name = name;
 
         Random rand = new Random();
         switch (rand.nextInt(3)) {

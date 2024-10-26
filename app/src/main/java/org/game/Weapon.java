@@ -68,16 +68,16 @@ public class Weapon {
             case WAND:
                 attackMessage = "Powerful spell in an ancient language is casted!";
                 minDamage = 23;
-                maxDamage = gen.ints(30, 50).findFirst().getAsInt();
+                maxDamage = gen.ints(23, 50).findFirst().getAsInt();
                 critChance = 0.25;
-                missChance = 0.8;
+                missChance = 0.2;
                 break;
             case GUN:
                 attackMessage = "Welcome to the land of freedom (Eagle noises)";
                 minDamage = 699990;
                 maxDamage = gen.ints(699990, 100000000).findFirst().getAsInt();
                 critChance = 0.9;
-                missChance = 0.8;
+                missChance = 0.0;
                 break;
             case LEGENDARY_ULTRA_POWERFUL_MIGHTY_SWORD:
                 attackMessage = "GET OUT!!!!!!!!11!!111! (3 fire emojis)";
@@ -86,14 +86,13 @@ public class Weapon {
                 critChance = 0.1;
                 missChance = 0.0;
                 break;
-
            case JOLLY_TEETHBREAKER:
-            attackMessage = "Ho Ho Ho, Merry Christmas to you all!";
-            minDamage = 40;
-            maxDamage = Math.max(40 ,gen.nextInt(80));
-            critChance = 0.5;
-            missChance = 0.5;
-            break;
+                attackMessage = "Ho Ho Ho, Merry Christmas to you all!";
+                minDamage = 40;
+                maxDamage = gen.ints(40, 80).findFirst().getAsInt();
+                critChance = 0.5;
+                missChance = 0.5;
+                break;
         }
 
     }

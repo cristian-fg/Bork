@@ -6,7 +6,7 @@ import org.game.Weapon.WeaponClass;
 
 public class Rogue extends Entity {
     public Rogue() {
-        maxHp = 90;
+        maxHp = 110;
         hp = maxHp;
 
         Random rand = new Random();

@@ -5,9 +5,10 @@ import java.util.Random;
 import org.game.Weapon.WeaponClass;
 
 public class Witch extends Entity {
-    public Witch() {
+    public Witch(String name) {
         maxHp = 125;
-        hp = 125;
+        hp = maxHp;
+        this.name = name;
 
         Random rand = new Random();
         switch (rand.nextInt(2)) {
