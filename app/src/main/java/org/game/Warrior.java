@@ -44,7 +44,7 @@ public class Warrior extends Entity {
             return;
         }
 
-        int damage = Math.max(weapon.minDamage, rand.nextInt(weapon.maxDamage));
+        int damage = rand.ints(weapon.minDamage, weapon.maxDamage).findFirst().getAsInt();
 
         if (rand.nextDouble(1.0) <= weapon.critChance) {
             target.takeDamage(damage * 2);
@@ -60,9 +60,6 @@ public class Warrior extends Entity {
     @Override
     public void takeDamage(int damage) {
         hp -= Math.max(0, (damage-  PASSIVE_ARMOUR));
-        if (hp < 1) {
-            kill();
-        }
     }
 
     @Override
@@ -77,13 +74,13 @@ public class Warrior extends Entity {
         int msgNum = rand.nextInt(2);
         switch (msgNum) {
             case 0:
-                return "OOOOOOOAAAAAAUUUUUGGGGGGGHHHHH";
+                return "OOOOOOOAAAAAAUUUUUGGGGGGGHHHHH '" + weapon.attackMessage + "'";
             case 1:
-                return "GRRRROOOOOOOOOOAAAAAAAGGGGGHHHHHH";
+                return "GRRRROOOOOOOOOOAAAAAAAGGGGGHHHHHH '" + weapon.attackMessage + "'";
             case 2:
-                return "HUUUUUUOOOOOOOOAAAAAGGGGGHHHHHHH";
+                return "HUUUUUUOOOOOOOOAAAAAGGGGGHHHHHHH '" + weapon.attackMessage + "'";
         }
 
-        return "OOOOOOOAAAAAAUUUUUGGGGGGGHHHHH";
+        return "OOOOOOOAAAAAAUUUUUGGGGGGGHHHHH '" + weapon.attackMessage + "'";
     }
 }

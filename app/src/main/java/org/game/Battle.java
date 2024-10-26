@@ -7,6 +7,7 @@ public class Battle {
     public BattleTurn turn = BattleTurn.YOUR_TURN;
     public Entity player;
     public Entity enemy;
+    public boolean playerLost = false;
 
     public Battle(Entity player, Entity enemy) {
         this.player = player;
@@ -25,29 +26,41 @@ public class Battle {
         while (player.hp > 0 && enemy.hp > 0) {
             if (turn == BattleTurn.YOUR_TURN) {
                 Game.slowPrint("--- YOUR TURN ---", 30);
-                Game.slowPrint("Choose. 'attack', 'heal', or 'run'.", 30);
-                switch (getPlayerChoice()) {
-                    case ATTACK:
-                        player.attack(enemy);
-                        break;
-                    case HEAL:
-                        int healAmount = Math.max(40, rand.nextInt(60));
-                        player.heal(healAmount);
-                        break;
-                    case RUN_AWAY:
-                        Game.slowPrint("You attempt to run away, but you trip and fall on your chin very embarrasingly.", 30);
-                        break;
+                player.getInfo();
+                Game.slowPrint("Choose. 'attack', 'heal', 'run', or 'info'.", 30);
+                boolean endChoice = false;
+                while (!endChoice) {
+                    switch (getPlayerChoice()) {
+                        case ATTACK:
+                            player.attack(enemy);
+                            endChoice = true;
+                            break;
+                        case HEAL:
+                            int healAmount = rand.ints(40, 65).findFirst().getAsInt();
+                            player.heal(healAmount);
+                            endChoice = true;
+                            break;
+                        case RUN_AWAY:
+                            Game.slowPrint("You attempt to run away, but you trip and fall on your chin very embarrasingly.", 30);
+                            endChoice = true;
+                            break;
+                        case INFO:
+                            enemy.getInfo();
+                            break;
+                    }
                 }
 
                 if (enemy.hp < 1) {
                     System.out.println("You won! You get to live and progress to the next room");
                     break;
                 }
+
                 Game.slowPrint("-----------------", 30);
                 System.out.println();
                 turn = BattleTurn.ENEMY_TURN;
             } else {
                 Game.slowPrint("--- ENEMY TURN ---", 30);
+                enemy.getInfo();
                 enemy.attack(player);
                 Game.slowPrint("-----------------", 30);
                 System.out.println();
@@ -61,6 +74,7 @@ public class Battle {
             Game.slowPrint("-----------------", 30);
 
             Game.gameOver();
+            playerLost = true;
             return;
         }
 
@@ -83,6 +97,8 @@ public class Battle {
                     return Action.HEAL;
                 case "run":
                     return Action.RUN_AWAY;
+                case "info":
+                    return Action.INFO;
                 default:
                     Game.slowPrint("Invalid choice. Choose between 'attack', 'heal', or 'run'.", 30);
             }
@@ -92,6 +108,7 @@ public class Battle {
     public enum Action {
         ATTACK,
         HEAL,
-        RUN_AWAY
+        RUN_AWAY,
+        INFO,
     }
 }

@@ -4,24 +4,21 @@ import java.util.Random;
 
 import org.game.Weapon.WeaponClass;
 
-public class Goblin extends Entity {
-    public Goblin() {
-        maxHp = 80;
-        hp = 80;
+public class Witch extends Entity {
+    public Witch() {
+        maxHp = 125;
+        hp = 125;
 
         Random rand = new Random();
-        switch (rand.nextInt(3)) {
+        switch (rand.nextInt(2)) {
             case 0:
-                weapon = new Weapon(WeaponClass.TWO_HANDED_AXE);
+                weapon = new Weapon(WeaponClass.STAFF);
                 break;
             case 1:
-                weapon = new Weapon(WeaponClass.TWO_HANDED_MACE);
+                weapon = new Weapon(WeaponClass.WAND);
                 break;
             case 2:
-                weapon = new Weapon(WeaponClass.ONE_HANDED_AXE);
-                break;
-            case 3:
-                weapon = new Weapon(WeaponClass.ONE_HANDED_SWORD);
+                weapon = new Weapon(WeaponClass.DAGGER);
                 break;
         }
     }
@@ -56,11 +53,11 @@ public class Goblin extends Entity {
 
     @Override
     public void kill() {
-        Game.slowPrint("You killed a goblin. You get nothing.", 30);
+        Game.slowPrint("Ew, she had a gigantic wart in her nose. You got nothing.", 30);
     }
 
     @Override
     public String genWarcry() {
-        return "*blurg* '" + weapon.attackMessage + "'";
+        return "he he he '" + weapon.attackMessage + "'";
     }
 }

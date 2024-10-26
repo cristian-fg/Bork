@@ -5,9 +5,23 @@ import java.util.Random;
 import org.game.Weapon.WeaponClass;
 
 public class Mage extends Entity {
-    public Mage(WeaponClass weaponClass) {
+    public Mage() {
         maxHp = 100;
         hp = maxHp;
+        Random rand = new Random();
+        switch (rand.nextInt(3)) {
+            case 0:
+                weapon = new Weapon(WeaponClass.WAND);
+                break;
+            case 1:
+                weapon = new Weapon(WeaponClass.STAFF);
+                break;
+            case 2:
+                weapon = new Weapon(WeaponClass.DAGGER);
+                break;
+            case 3:
+                weapon = new Weapon(WeaponClass.GUN);
+        }
     }
 
     @Override
@@ -20,7 +34,7 @@ public class Mage extends Entity {
             return;
         }
 
-        int damage = Math.max(weapon.minDamage, rand.nextInt(weapon.maxDamage));
+        int damage = rand.ints(weapon.minDamage, weapon.maxDamage).findFirst().getAsInt();
 
         if (rand.nextDouble(1.0) <= weapon.critChance) {
             target.takeDamage(damage * 2);
@@ -43,23 +57,20 @@ public class Mage extends Entity {
         int msgNum = rand.nextInt(3);
         switch (msgNum) {
             case 0:
-                return "IGNIS!";
+                return "IGNIS! '" + weapon.attackMessage + "'";
             case 1:
-                return "HUZZAHH!";
+                return "HUZZAHH! '" + weapon.attackMessage + "'";
             case 2:
-                return "abracadabra ";
+                return "abracadabra '" + weapon.attackMessage + "'";
             case 3:
-                return "PK Fire";
+                return "PK Fire '" + weapon.attackMessage + "'";
         }
 
-        return "IGNIS!";
+        return "IGNIS! '" + weapon.attackMessage + "'";
     }
 
     @Override
     public void takeDamage(int damage) {
         hp -= damage;
-        if (hp < 1) {
-            kill();
-        }
     }
 }

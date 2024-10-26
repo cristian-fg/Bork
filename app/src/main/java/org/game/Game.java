@@ -31,11 +31,11 @@ public class Game {
                     validClassChoice = true;
                     break;
                     case "mage":
-                    player = new Mage(WeaponClass.WAND);
+                    player = new Mage();
                     validClassChoice = true;
                     break;
                     case "rogue":
-                    player = new Rogue(WeaponClass.DAGGER);
+                    player = new Rogue();
                     validClassChoice = true;
                     break;
                     default:
@@ -71,13 +71,20 @@ public class Game {
             slowPrint("You need to get out of there.", 30);
             */
 
-            Goblin gobling = new Goblin(WeaponClass.TWO_HANDED_AXE);
+            Goblin gobling = new Goblin();
             gobling.name = "Jeff";
             Battle battle = new Battle(player, gobling);
             battle.battle();
 
-            input.close();
-            gameRunning = false;
+            if (battle.playerLost) {
+                continue;
+            }
+
+            slowPrint("congratulations you won or something idk");
+            System.out.println();
+            System.out.println("Input anything to go back to title screen.");
+            System.out.print("> ");
+            String wait = input.nextLine();
         }
     }
 
@@ -152,6 +159,13 @@ public class Game {
 
         String wait = scanner.nextLine();
         clearConsole();
+    }
+
+    public static void waitForInput() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Input anything to proceed.");
+        System.out.print("> ");
+        scanner.nextLine();
     }
 }
 
