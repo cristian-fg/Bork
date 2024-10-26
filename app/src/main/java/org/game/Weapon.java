@@ -86,6 +86,14 @@ public class Weapon {
                 critChance = 0.1;
                 missChance = 0.0;
                 break;
+
+           case JOLLY_TEETHBREAKER:
+            attackMessage = "Ho Ho Ho, Merry Christmas to you all!";
+            minDamage = 40;
+            maxDamage = Math.max(40 ,gen.nextInt(80));
+            critChance = 0.5;
+            missChance = 0.5;
+            break;
         }
 
     }
@@ -101,5 +109,6 @@ public class Weapon {
         WAND,
         GUN,
         LEGENDARY_ULTRA_POWERFUL_MIGHTY_SWORD;
+        JOLLY_TEETHBREAKER,
     }
 }
