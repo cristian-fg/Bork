@@ -108,7 +108,7 @@ public class Weapon {
         STAFF,
         WAND,
         GUN,
-        LEGENDARY_ULTRA_POWERFUL_MIGHTY_SWORD;
-        JOLLY_TEETHBREAKER,
+        LEGENDARY_ULTRA_POWERFUL_MIGHTY_SWORD,
+        JOLLY_TEETHBREAKER;
     }
 }
