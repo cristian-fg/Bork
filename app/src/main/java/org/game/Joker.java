@@ -40,11 +40,11 @@ public class Joker extends Entity {
         if (rand.nextDouble(1.0) <= weapon.critChance) {
             target.takeDamage(damage * 2);
             Game.slowPrint(genWarcry(), 30);
-            Game.slowPrint("RYUGI- Joker got one down " + target.name + " for " + damage * 2 + " damage!", 30);
+            Game.slowPrint("YUSUKE- Joker got the shadow's weakness" + target.name + " for " + damage * 2 + " damage!", 30);
         } else {
             target.takeDamage(damage);
             Game.slowPrint(genWarcry(), 30);
-            Game.slowPrint("YUSEKE- Joker got the shadow " + target.name + " for " + damage + "! ", 30);
+            Game.slowPrint("RYUGI- ITS AN ALL-OUT ATTACK ("+damage+ "Damage) ", 30);
         }
     }
     @Override
