@@ -108,21 +108,21 @@ public class Weapon {
                 missChance = 0.20;
                 break;
             case MYRIAD_TRUTHS:
-                attackMessage = "BY THE MYRIAD TRUTHS!!!";
+                attackMessage = " BY THE MYRIAD TRUTHS!!!";
                 minDamage = 600;
                 maxDamage = gen.ints(1000, 100000).findFirst().getAsInt();
                 critChance = 0.33;
                 missChance = 0.20;
                 break;
             case GARU :
-                attackMessage = "MORGANA- That is incredible, Joker!";
+                attackMessage = " MORGANA- That is incredible, Joker!";
                 minDamage = 40;
                 maxDamage = gen.ints(50, 55).findFirst().getAsInt();
                 critChance = 0.33;
                 missChance = 0.37;
                 break;
             case AGI :
-                attackMessage = "ANN- Carmen, take em' down!";
+                attackMessage = " ANN- Carmen, take em' down!";
                 minDamage = 10;
                 maxDamage = gen.ints(62, 80).findFirst().getAsInt();
                 critChance = 0.62;
