@@ -40,11 +40,11 @@ public class Joker extends Entity {
         if (rand.nextDouble(1.0) <= weapon.critChance) {
             target.takeDamage(damage * 2);
             Game.slowPrint(genWarcry(), 30);
-            Game.slowPrint("RYUGI- Joker got one down" + target.name + " for " + damage * 2 + " damage!", 30);
+            Game.slowPrint("RYUGI- Joker got one down " + target.name + " for " + damage * 2 + " damage!", 30);
         } else {
             target.takeDamage(damage);
             Game.slowPrint(genWarcry(), 30);
-            Game.slowPrint("YUSEKE- Joker got the shadow" + target.name + " for " + damage + "! ", 30);
+            Game.slowPrint("YUSEKE- Joker got the shadow " + target.name + " for " + damage + "! ", 30);
         }
     }
     @Override
@@ -58,13 +58,13 @@ public class Joker extends Entity {
         int msgNum = rand.nextInt(3);
         switch (msgNum) {
             case 0:
-                return "HARU- This is going to be graceful! '" + weapon.attackMessage + "'";
+                return " HARU- This is going to be graceful! '" + weapon.attackMessage + "'";
             case 1:
-                return "MAKOTO- Get them down Joker!" + weapon.attackMessage + "'";
+                return " MAKOTO- Get them down Joker!" + weapon.attackMessage + "'";
             case 2:
-                return "AKECHI- Guess you are good for something..." + weapon.attackMessage + "'";
+                return " AKECHI- Guess you are good for something..." + weapon.attackMessage + "'";
             case 3:
-                return "PERSONA!!!!" + weapon.attackMessage + "'";
+                return " PERSONA!!!!" + weapon.attackMessage + "'";
         }
 
         return "PERSONA!!!!" + weapon.attackMessage + "'";
@@ -75,3 +75,4 @@ public class Joker extends Entity {
         hp -= damage;
     }
 }
+
