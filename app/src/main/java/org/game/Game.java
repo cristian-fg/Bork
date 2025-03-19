@@ -52,8 +52,13 @@ public class Game {
 
             if (player.name.equals("god")) {
                 player.weapon = new Weapon(WeaponClass.GUN);
+                slowPrint("May God Bless America...", 40);
             }
-
+            if (player.name.equals("Trickster")) {
+                player = new Joker();
+                slowPrint("I am thou, Thou art I...", 40);
+            }
+ 
             slowPrint("Now...", 40);
             slowPrint("You feel as if your vision is becoming blurry...", 40);
             slowPrint("And you faint.", 40);
@@ -247,5 +252,6 @@ public class Game {
         }
     }
 }
+
 
 
