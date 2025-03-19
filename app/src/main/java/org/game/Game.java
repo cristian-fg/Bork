@@ -56,6 +56,7 @@ public class Game {
             }
             if (player.name.equals("Trickster")) {
                 player = new Joker();
+                player.name = "Joker";
                 slowPrint("I am thou, Thou art I...", 40);
             }
  
@@ -252,6 +253,9 @@ public class Game {
         }
     }
 }
+
+
+
 
 
 
