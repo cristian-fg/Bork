@@ -61,12 +61,12 @@ public class Game {
 
             if (player.name.equals("god")) {
                 player.weapon = new Weapon(WeaponClass.GUN);
-                slowPrint("May God Bless America...", 15);
+                slowPrint("May God Bless America...", 5);
             }
             if (player.name.equals("Trickster")) {
                 player = new Joker();
                 player.name = "Joker";
-                slowPrint("I am thou, Thou art I...", 15);
+                slowPrint("I am thou, Thou art I...", 5);
             }
  
             slowPrint("Now...", 40);
