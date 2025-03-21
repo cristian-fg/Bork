@@ -17,7 +17,8 @@ public class Game {
             Entity player = null;
 
             slowPrint("Choose your vessel...", 40);
-            slowPrint("You can become a mighty warrior... a lone rogue... or a fearsome mage...", 40);
+            slowPrint("You can become a mighty warrior... a lone rogue... a fearsome mage...", 40);
+            slowPrint("Maybe even a skilled chef... or a legendary outlaw", 40);
             slowPrint("What is your choice? Speak.", 40);
             boolean validClassChoice = false;
             while (!validClassChoice) {
@@ -37,9 +38,17 @@ public class Game {
                     player = new Rogue();
                     validClassChoice = true;
                     break;
+                    case "chef":
+                    player = new Chef();
+                    validClassChoice = true;
+                    break;
+                    case "outlaw":
+                    player = new Outlaw();
+                    validClassChoice = true;
+                    break;
                     default:
                     slowPrint("That is not a valid choice.", 40);
-                    slowPrint("Choose between a 'warrior', a 'rogue', or a 'mage.'", 40);
+                    slowPrint("Choose an specific command, like: 'warrior', 'rogue' or even 'mage'.", 40);
                     System.out.println("(Please choose only between those 3 words)");
                     break;
                 }
@@ -52,12 +61,12 @@ public class Game {
 
             if (player.name.equals("god")) {
                 player.weapon = new Weapon(WeaponClass.GUN);
-                slowPrint("May God Bless America...", 40);
+                slowPrint("May God Bless America...", 15);
             }
             if (player.name.equals("Trickster")) {
                 player = new Joker();
                 player.name = "Joker";
-                slowPrint("I am thou, Thou art I...", 40);
+                slowPrint("I am thou, Thou art I...", 15);
             }
  
             slowPrint("Now...", 40);
@@ -253,6 +262,9 @@ public class Game {
         }
     }
 }
+
+
+
 
 
 
