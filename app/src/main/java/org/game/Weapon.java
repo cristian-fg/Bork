@@ -128,6 +128,62 @@ public class Weapon {
                 critChance = 0.62;
                 missChance = 0.42;
                 break;
+                case GIGANTIC_SPATULA :
+                attackMessage = " Bon Appetit!";
+                minDamage = 13;
+                maxDamage = gen.ints(40, 50).findFirst().getAsInt();
+                critChance = 0.20;
+                missChance = 0.30;
+                break;
+                case SALT_CANNON :
+                attackMessage = " Get condimented, dummies!";
+                minDamage = 5;
+                maxDamage = gen.ints(50, 75).findFirst().getAsInt();
+                critChance = 0.60;
+                missChance = 0.25;
+                break;
+                case BOILING_POT :
+                attackMessage = " Ups, my bad!";
+                minDamage = 30;
+                maxDamage = gen.ints(31, 40).findFirst().getAsInt();
+                critChance = 0.80;
+                missChance = 0.30;
+                break;
+                case DUAL_KNIVES :
+                attackMessage = " -Hand over the money!- SLISH CHING!";
+                minDamage = 20;
+                maxDamage = gen.ints(39, 40).findFirst().getAsInt();
+                critChance = 0.50;
+                missChance = 0.22;
+                break;
+                case RUDIMENTARY_PISTOL :
+                attackMessage = " CHSCHschss... BAM!";
+                minDamage = 30;
+                maxDamage = gen.ints(90, 100).findFirst().getAsInt();
+                critChance = 0.30;
+                missChance = 0.60;
+                break;
+                case GRAPPLING_HOOK :
+                attackMessage = " -YOU'RE MINE!- CLANG!";
+                minDamage = 45;
+                maxDamage = gen.ints(75, 90).findFirst().getAsInt();
+                critChance = 0.20;
+                missChance = 0.50;
+                break;
+                case CROSSBOW :
+                attackMessage = " SHRKRG... CLSHG!";
+                minDamage = 70;
+                maxDamage = gen.ints(100, 110).findFirst().getAsInt();
+                critChance = 0.25;
+                missChance = 0.60;
+                break;
+                case BOOMERANG :
+                attackMessage = " - FRRRRRRIM... FURHHUUHHHUU";
+                minDamage = 35;
+                maxDamage = gen.ints(70, 90).findFirst().getAsInt();
+                critChance = 0.45;
+                missChance = 0.15;
+                break;
             }
 
         }
@@ -149,6 +205,15 @@ public class Weapon {
         MYRIAD_TRUTHS,
         GARU,
         AGI,
+        GIGANTIC_SPATULA,
+        SALT_CANNON,
+        BOILING_POT,
+        DUAL_KNIVES,
+        RUDIMENTARY_PISTOL,
+        GRAPPLING_HOOK,
+        CROSSBOW,
+        BOOMERANG,
+
 
     }
 }
