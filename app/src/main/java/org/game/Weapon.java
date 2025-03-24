@@ -77,7 +77,7 @@ public class Weapon {
                 minDamage = 699990;
                 maxDamage = gen.ints(699991, 100000000).findFirst().getAsInt();
                 critChance = 0.90;
-                missChance = 0.83;
+                missChance = 0.1;
                 break;
             case LEGENDARY_ULTRA_POWERFUL_MIGHTY_SWORD:
                 attackMessage = "GET OUT!!!!!!!!11!!111! (3 fire emojis)";

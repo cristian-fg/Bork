@@ -69,12 +69,6 @@ public class TheVoid extends Entity {
 
     @Override
     public void kill() {
-        System.out.println(" __   _____  _   _  __        _____ _   _ _ _ ");
-        System.out.println(" \\ \\ / / _ \\| | | | \\ \\      / /_ _| \\ | | | | ");
-        System.out.println(" \\ V / | | | | | |  \\ \\ /\\ / / | ||  \\| | | | ");
-        System.out.println("   | || |_| | |_| |   \\ V  V /  | || |\\  |_|_|");
-        System.out.println("   |_| \\___/ \\___/     \\_/\\_/  |___|_| \\_(_|_) ");
-     
         Game.slowPrint("Darkness is sealed, the kingdom is safe! ", 30);
     }
 

@@ -7,7 +7,7 @@ import org.game.Weapon.WeaponClass;
 public class Witch extends Entity {
     public Witch(String name) {
         maxHp = 125;
-        hp = maxHp;
+        hp = 125;
         this.name = name;
 
         Random rand = new Random();
